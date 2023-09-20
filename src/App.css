@@ -2426,6 +2426,29 @@ input.form-control:focus {
 } */
 
 /* FONT FACES */
+
+/* loading detail */
+.loading-detail-cart{
+  height: 100vh;
+  background: #0e0e0e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "LVRegular";
+  color: white;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.loading-gif{
+  background: transparent;
+  border: none;
+  width: 15%;
+}
+
+
+
+
 @font-face {
   font-family: "Gucci";
   src: local("Gucci"), url("./Fonts/gucci/gucci.woff") format("woff");
