@@ -58,12 +58,14 @@ body {
   width: 100%;
   gap: auto;
   overflow-x: hidden;
-  z-index: 999;
+  z-index: 1203;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-
+.App-header{
+  background: #0e0e0e;
+}
 .header p {
   font-size: 12px;
   font-weight: 400;
@@ -85,7 +87,7 @@ body {
   backdrop-filter: blur(10px);
   gap: 20px;
   padding: 20px 0;
-  z-index: 1201;
+  z-index: 1203;
   text-align: center;
   transition: transform 0.5s ease-out;
   transform: translateX(-100%);
@@ -109,11 +111,11 @@ body {
 
 .menu-toggle {
   position: fixed;
-  top: 20px;
+  top: 40px;
   left: 20px;
   display: flex;
   color: white;
-  z-index: 1202;
+  z-index: 1204;
   letter-spacing: 1.5px;
   font-family: "futuraStd";
   font-size: 15px !important;
@@ -151,10 +153,26 @@ body {
   letter-spacing: 1px;
   border-left: 1px solid #222222;
 }
-
+.back-header{
+  letter-spacing: 1.5px;
+  color: white;
+  background: #000;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 40px !important;
+  width: 200px;
+  margin: auto;
+  transition: all 0.4s ease;
+}
+.back-header:hover{
+  scale: 1.05;
+}
 .submenu p {
   padding-left: 1rem;
   text-align: left;
+  font-weight: 400;
+  color: #1b1b1b;
   text-transform: capitalize !important;
   margin-bottom: 20px;
 }
