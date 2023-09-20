@@ -418,21 +418,22 @@ body {
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.87);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   z-index: 10;
 }
 .exploreButton:hover {
+  scale: 1.03;
   border: 2px solid rgba(255, 255, 255, 0.87);
 }
 .exploreButton.fixedButton {
-  position: fixed;
-  bottom: 70%;
-  left: 50%;
+  position: fixed !important;
+  bottom: 60% !important;
+  left: 50% !important;
   font-family: "futuraStd";
   letter-spacing: 1.8px;
   font-weight: 500;
-  transform: translateX(-50%);
-  background-color: #000;
+  transform: translateX(-50%) !important;
+  background-color: #000 !important;
   border: none !important;
   transition: all 0.6s ease;
   color: #fff;
@@ -1165,7 +1166,35 @@ input.form-control:focus {
   margin-bottom: 100px;
   margin-top: 30px;
 }
-
+.seeAll-collection{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  color: white;
+  letter-spacing: 1.3px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: "futuraStd";
+  border: none;
+  position: relative;
+}
+.seeAll-collection::after{
+  content: '';
+  position: absolute;
+  width: 140px;
+  transform: translateX(50%) scaleX(0);
+  height: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -5px;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+.seeAll-collection:hover::after{
+  transform: translateX(50%) scale(1);
+}
 
 /* BUTTON SCROLL TO TOP */
 .scroll-to-top-btn {

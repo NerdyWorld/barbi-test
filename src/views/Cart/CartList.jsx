@@ -48,7 +48,7 @@ const CartItemsList = ({ closeModal }) => {
         </div>
         <div className="checkout-cart-list">
           <button className="checkout-cart">Checkout</button>
-          <button className="checkout-cart" onClick={() => navigate('home')}>View more collections</button>
+          <button className="checkout-cart" onClick={() => navigate('/home')}>View more collections</button>
         </div>
         {cartItems.map((item, index) => {
           console.log("Rendering item:", item);
