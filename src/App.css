@@ -1181,7 +1181,7 @@ input.form-control:focus {
 .seeAll-collection::after{
   content: '';
   position: absolute;
-  width: 140px;
+  width: 160px;
   transform: translateX(50%) scaleX(0);
   height: 1px;
   display: flex;
