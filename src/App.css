@@ -117,15 +117,32 @@ body {
   color: white;
   z-index: 1204;
   letter-spacing: 1.5px;
-  font-family: "futuraStd";
-  font-size: 15px !important;
+  font-family: "Louis Vuitton Web";
+  font-size: 16px !important;
   border-bottom: none !important;
   text-transform: capitalize !important;
   cursor: pointer;
+  border: none;
+
+}
+.menu-toggle::after {
+content: "";
+position: absolute;
+width: 100%;
+transform: translateX(-50%) scaleX(0);
+height: 1px;
+left: 50%;
+bottom: -2px;
+background-color: white;
+transform-origin: bottom right;
+transition: transform 0.4s ease-out;
+}
+.menu-toggle:hover::after {
+transform: translateX(-50%) scale(1);
 }
 .textMenu {
   cursor: pointer;
-  font-family: "futuraStd";
+  font-family: "Louis Vuitton Web";
   text-transform: uppercase;
   transition: color 0.3s;
 }
@@ -136,7 +153,11 @@ body {
 .nameToggleSub {
   color: rgb(255, 255, 255);
   font-weight: 500;
-  letter-spacing: 2px;
+  font-size: 16px;
+  letter-spacing: 2.5px;
+}
+.nameToggleSub:hover{
+  color: rgb(255, 127, 255);
 }
 
 /* SUBMENU */
@@ -146,35 +167,40 @@ body {
   max-height: 0;
   transition: all 0.3s ease;
   background: transparent;
-  margin: 8px 0 8px 150px;
+  margin: 8px 0 8px 160px;
   color: #131313;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 1px;
-  border-left: 1px solid #222222;
+  border-left: 1px solid #ffc1f5;
 }
 .back-header {
   letter-spacing: 1.5px;
   color: white;
-  background: #000;
-  font-size: 13px;
+ 
+  font-size: 15px;
   padding: 5px;
   border-radius: 4px;
-  margin-top: 40px !important;
+  margin-top: 10px !important;
   width: 200px;
   margin: auto;
   transition: all 0.4s ease;
 }
-.back-header:hover {
-  scale: 1.05;
+
+.back-header:hover{
+  color: rgb(255, 127, 255);
 }
 .submenu p {
   padding-left: 1rem;
   text-align: left;
   font-weight: 400;
-  color: #1b1b1b;
+  font-size: 16px;
+  color: #ffc3f5;
   text-transform: capitalize !important;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+}
+.submenu p:hover{
+  color: rgb(255, 255, 255);
 }
 .submenu.open {
   max-height: 600px;
@@ -289,34 +315,41 @@ body {
 }
 
 .menuLogin {
-  font-size: 14px;
-  font-weight: 200;
+  font-size: 16px;
+  font-weight: 200 !important;
   padding-top: 100px;
-  color: #000000;
+  color: #fafafa;
   text-transform: capitalize;
-  font-family: "futuraStd";
+  font-family: "Louis Vuitton Web";
   cursor: pointer;
+  border: none;
+  position: relative;
   letter-spacing: 1.3px;
   border-bottom: 2px solid transparent;
   transition: border-bottom-color 0.3s ease;
+}
+
+.menuLogin::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  transform: translateX(-50%) scaleX(0);
+  height: 1px;
+  left: 50%;
+  bottom: -5px;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+.menuLogin:hover::after {
+  transform: translateX(-50%) scale(1);
 }
 .containerLogin {
   display: flex;
   justify-content: center;
 }
-.menuLogin::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-.menuLogin:hover {
-  border-bottom-color: #000000;
-}
+
+
 
 /* NAV BAR LANDING */
 
@@ -1999,11 +2032,12 @@ input.form-control:focus {
   letter-spacing: 1px;
 }
 .prod-detail {
-  margin-top: 30px;
+  margin-top: 20px;
   cursor: pointer;
   color: black;
   font-size: 16px;
-  border-bottom: 2px solid transparent;
+  margin-bottom: 40px;
+  border-bottom: 1px solid transparent;
   transition: border-bottom-color 0.3s ease;
 }
 .description-detail {

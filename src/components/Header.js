@@ -90,7 +90,7 @@ const Header = () => {
         )}
         <div className="textMenu">
           <p className="nameToggleSub" onClick={toggleSubMenuOpen}>
-            Woman
+            Women's Collections
           </p>
           <div className={`submenu ${subMenuOpen ? "open" : ""}`}>
             <p onClick={() => navigate("/collection/louisvuitton")}>Louis Vuitton</p>
@@ -99,16 +99,7 @@ const Header = () => {
             <p onClick={() => navigate("/collection/dolcegabbana")}>Dolce & Gabanna</p>
             <p onClick={() => navigate("/collection/fendi")}>Fendi</p>
           </div>
-          <p className="nameToggleSub" onClick={toggleSubMenuMenOpen}>
-            Men
-          </p>
-          <div className={`submenu ${subMenuMenOpen ? "open" : ""}`}>
-            <p>Louis Vuitton</p>
-            <p>Gucci</p>
-            <p>Jimmy Choo</p>
-            <p>Dolce & Gabanna</p>
-            <p>Fendi</p>
-          </div>
+          
           <p className="back-header" onClick={() => navigate("/")}>Our Store</p>
           <p className="back-header" onClick={() => navigate("/")}>Back</p>
         </div>
