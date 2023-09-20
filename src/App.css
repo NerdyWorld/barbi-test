@@ -110,8 +110,8 @@ body {
 }
 
 .menu-toggle {
-  position: fixed;
-  top: 40px;
+  position: absolute;
+  top: 20px;
   left: 20px;
   display: flex;
   color: white;
