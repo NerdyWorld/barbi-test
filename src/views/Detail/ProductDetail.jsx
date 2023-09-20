@@ -20,7 +20,7 @@ const ProductDetail = ({ productId, initialSelectedColor }) => {
   const dispatch = useDispatch();
   const userState = useSelector(state => state.user);
   const [showCartButton, setShowCartButton] = useState(false); 
-
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
   useEffect(() => {
     if (products.length === 0) {
@@ -29,17 +29,7 @@ const ProductDetail = ({ productId, initialSelectedColor }) => {
   }, [dispatch, products]);
 
 
-  useEffect(() => {
-    const handleScroll = () => {
-        closeCart();
-    };
-    if (isCartOpen) {
-        window.addEventListener('scroll', handleScroll);
-    }
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-    };
-}, [isCartOpen]);
+  
 
   const [selectedColor, setSelectedColor] = useState(
     initialSelectedColor ||
@@ -64,9 +54,6 @@ const ProductDetail = ({ productId, initialSelectedColor }) => {
   const handleColorClick = (color) => {
     setSelectedColor(color);
   };
-  const closeCart = () => {
-    setIsCartOpen(false);
-  };
 
   const addToCart = () => {
     if (!selectedSize) {
@@ -79,6 +66,7 @@ const ProductDetail = ({ productId, initialSelectedColor }) => {
     }
    
     setShowCartButton(true);
+    setIsCartModalOpen(true); 
   };
 
   return (
@@ -253,11 +241,12 @@ const ProductDetail = ({ productId, initialSelectedColor }) => {
           )}
         </div>
       )}
-      {showCartButton && (
+      {isCartModalOpen  && (
         <CartButton 
           product={{ ...product, selectedSize, selectedColor }} 
-          close={() => setIsCartOpen(false)}
-           />
+          close={() => setIsCartModalOpen(false)}
+          open={() => setIsCartModalOpen(true)} 
+        />
           )}
     </div>
   );

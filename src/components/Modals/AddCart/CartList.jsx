@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import CartButton from "../../components/Modals/AddCart/AddCart";
+import CartButton from "./AddCart";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { toggleCartItem } from "../../features/user/userSlice";
+import { toggleCartItem } from "../../../features/user/userSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -38,8 +38,8 @@ const CartItemsList = ({ closeModal }) => {
   };
 
   return (
-    <div className="cart-overlay">
-      <div className="cart-drawer">
+    <div className="cart-overlay-detail" >
+      <div className="cart-drawer-detail">
         <div className="cart-container-add">         
           <h4 className="shop-cart-prod">ADDED TO SHOPPING BAG</h4> 
           <button className="close-modal" onClick={closeModal}>
@@ -50,12 +50,11 @@ const CartItemsList = ({ closeModal }) => {
           <button className="checkout-cart">Checkout</button>
           <button className="checkout-cart" onClick={() => navigate('/home')}>View more collections</button>
         </div>
+      
         {cartItems.map((item, index) => {
-          console.log("Rendering item:", item);
           let imageUrl = "";
 
           if (!item) {
-            console.error("Ítem indefinido:", item);
             return null;
           }
 
@@ -66,10 +65,9 @@ const CartItemsList = ({ closeModal }) => {
             if (colorImageObj) {
               imageUrl = colorImageObj.images[0];
             }
-          }
+          }       
           return (
-            <div className="cart-item" key={index}>
-                 
+            <div className="cart-item" key={index}>                 
               <div className="cart-container-title">
                 <img className='image-cart-item' src={imageUrl} alt="Producto" />
                 <div className="data-cart-price">
@@ -88,9 +86,6 @@ const CartItemsList = ({ closeModal }) => {
                     <span>Size: {item.selectedSize}</span>
                   </li>
                 )}
-                {/* <li>
-                  <span>Quantity: {item.quantity}</span>
-                </li> */}
                 <div className="btnDelete">
                   <RiDeleteBin6Line
                     className="btn-delete"
@@ -101,9 +96,9 @@ const CartItemsList = ({ closeModal }) => {
             </div>
           );
         })}
-      
+         </div>
       </div>
-    </div>
+   
   );
 };
 

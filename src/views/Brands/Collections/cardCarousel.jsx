@@ -66,7 +66,7 @@ const CardCarousel = ({ products = [] }) => {
                 <span
                   className="carousel-control-prev-icon custom-icon-card"
                   aria-hidden="true"
-                  style={{ filter: "invert(70%)", backgroundSize: "50%" }}
+                  style={{ filter: "invert(90%)", backgroundSize: "60%" }}
                 ></span>
                 <span className="visually-hidden">Previous</span>
               </button>
@@ -80,7 +80,7 @@ const CardCarousel = ({ products = [] }) => {
                 <span
                   className="carousel-control-next-icon custom-icon-card"
                   aria-hidden="true"
-                  style={{ filter: "invert(70%)", backgroundSize: "50%" }}
+                  style={{ filter: "invert(90%)", backgroundSize: "60%" }}
                 ></span>
                 <span className="visually-hidden">Next</span>
               </button>
