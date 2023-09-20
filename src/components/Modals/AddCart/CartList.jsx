@@ -14,7 +14,7 @@ const CartItemsList = ({ closeModal }) => {
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (!e.target.closest(".cart-drawer")) {
+      if (!e.target.closest(".cart-drawer-detail")) {
         closeModal();
       }
     };
@@ -38,14 +38,14 @@ const CartItemsList = ({ closeModal }) => {
   };
 
   return (
-    <div className="cart-overlay-detail" >
+    <div className={cartItems.length ? 'cart-overlay-detail open' : 'cart-overlay-detail'}>
       <div className="cart-drawer-detail">
         <div className="cart-container-add">         
           <h4 className="shop-cart-prod">ADDED TO SHOPPING BAG</h4> 
           <button className="close-modal" onClick={closeModal}>
             X
           </button>
-        </div>
+          </div>
         <div className="checkout-cart-list">
           <button className="checkout-cart">Checkout</button>
           <button className="checkout-cart" onClick={() => navigate('/home')}>View more collections</button>
@@ -96,7 +96,7 @@ const CartItemsList = ({ closeModal }) => {
             </div>
           );
         })}
-         </div>
+       </div>
       </div>
    
   );

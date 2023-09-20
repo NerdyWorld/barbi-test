@@ -568,7 +568,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.452);
-  z-index: 9999;
+  z-index: 1205;
 }
 
 .login-card {
@@ -2138,12 +2138,13 @@ input.form-control:focus {
   display: flex;
   justify-content: flex-start;
   width: 350px;
-  margin-top: -30px;
+  margin-top: -10px;
   align-items: center;
+  gap: 20px;
 }
 .button-add-cart img {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
 }
 .add-to-cart {
   background: black;
@@ -2170,14 +2171,14 @@ input.form-control:focus {
   right: 0;
   bottom: 0;
   background-color: rgb(255, 255, 255);
-  z-index: 999;
+  z-index: 1204;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 400px;
   height: fit-content;
   display: flex;
-  margin-top: 10px;
+  margin-top: 20px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -2185,14 +2186,16 @@ input.form-control:focus {
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
+ 
+  }
+
 .cart-item-details-add {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 13px;
-  margin-top: -5px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .color-cart-add {
@@ -2276,17 +2279,21 @@ input.form-control:focus {
   bottom: 0;
   width: 100%;  
   height: 100%;
-  background: rgba(194, 194, 194, 0.068);
+  background: rgba(194, 194, 194, 0);
   display: flex;
   justify-content: flex-end;
   z-index: 2008;
-
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
 }
-
+  .cart-overlay-detail.open {
+    transform: translateX(0);
+  }
 .cart-drawer-detail {
   display: flex;
   flex-direction: column;
   max-width: 500px;
+  width: 40%;
   background: white;
   height: 100%;
   overflow-y: auto;
@@ -2344,7 +2351,7 @@ input.form-control:focus {
 .checkout-cart-list {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 10px; 
   border-bottom: 1px solid rgb(192, 192, 192);
 }
 .checkout-cart {

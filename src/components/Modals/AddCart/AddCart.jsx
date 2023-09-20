@@ -12,19 +12,18 @@ const CartButton = ({ product, close, open }) => {
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (
-        !e.target.closest(".button-add-cart") &&
-        !e.target.closest(".cart-items-list-modal")
-      ) {
-        setIsCartModalOpen(false);
+      if (e.target.closest(".button-add-cart") || e.target.closest(".cart-items-list-modal")) {
+        return; 
       }
+      close(); 
     };
-
+  
     document.addEventListener("mousedown", handleOutsideClick);
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
-  }, []);
+  }, [close]);
+
 
   const handleToggleItem = () => {
     if (user) {
